@@ -1,4 +1,4 @@
-package com.janessa.java.netty.starter;
+package com.janessa.jetty.simplebio;
 
 import java.io.*;
 import java.net.Socket;
@@ -18,13 +18,14 @@ public class Client {
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(socket.getOutputStream())
             );
-            //userReader is used to get inout from console
+            //userReader is used to get input from console
             BufferedReader userReader = new BufferedReader(
                     new InputStreamReader(System.in)
             );
             String msg = null;
             //
             while (true) {
+                System.out.println("Waiting for message from Server...");
                 String input = userReader.readLine(); // Program will be stuck until there is an input from console
                 //Send message to Server. NOTICE: append \n at the end of each line since Server is using readLine to get message sent by Client
                 writer.write(input + "\n");// Send the input message to Server. Notice the message is not actually sent out. It is written into the buffer
