@@ -5,11 +5,11 @@ import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
-        //IP and port the Server is listening on
-        final String DEFAULT_SERVER_HOST = "127.0.0.1";
-        final int DEFAULT_SERVER_PORT = 12345;
+        //IP and port Server is listening on
+        final String SERVER_IP = "127.0.0.1";
+        final int SERVER_PORT = 12345;
         //Create a Socket
-        try (Socket socket = new Socket(DEFAULT_SERVER_HOST, DEFAULT_SERVER_PORT)) {
+        try (Socket socket = new Socket(SERVER_IP, SERVER_PORT)) {
             //reader is used to read message from socket(Server)
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream())

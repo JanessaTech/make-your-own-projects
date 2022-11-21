@@ -6,10 +6,10 @@ import java.net.Socket;
 
 public class Server {
     public static void main(String[] args) {
-        final int DEFAULT_PORT = 12345;
+        final int PORT = 12345;
         //Create a ServerSocket listening on the port 12345
-        try (ServerSocket serverSocket = new ServerSocket(DEFAULT_PORT)) {
-            System.out.println("ServerSocket is created on the port " + DEFAULT_PORT);
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.println("ServerSocket is created on the port " + PORT);
             while (true) {//serverSocket is listening on 12345 in a loop
                 //Listening on the port 12345 in a blocking way. Program will be stuck here until Client connects to Server successfully
                 System.out.println("Waiting for Client to connect...");
