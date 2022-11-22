@@ -22,6 +22,7 @@
     </build>
     <modules>
         <module>simplebio</module>
+        <module>bufferUsage</module>
     </modules>
 
     <properties>
