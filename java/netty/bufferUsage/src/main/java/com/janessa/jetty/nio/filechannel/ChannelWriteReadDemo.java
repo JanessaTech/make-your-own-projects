@@ -36,7 +36,7 @@ public class ChannelWriteReadDemo {
         System.out.println("[After first read] reader channel's position = " + reader.position());
 
         System.out.println("------------------------------");
-        writer.write(ByteBuffer.wrap("jane".getBytes()));
+        writer.write(ByteBuffer.wrap(" jane".getBytes()));
         System.out.println("[After second write] writer channel's position = " + writer.position());
 
         System.out.println("------------------------------");
@@ -44,6 +44,11 @@ public class ChannelWriteReadDemo {
         System.out.println(n + " chars are read");
         System.out.println("[After second read] readBuffer's info: position = " + reader.position() + ", limit = " + readBuffer.limit());
         System.out.println("[After second read] reader channel's position = " + reader.position());
-        
+
+        System.out.println("------------------------------");
+        readBuffer.flip();
+        String res = String.valueOf(charset.decode(readBuffer));
+        System.out.println("result : " + res);
+
     }
 }
